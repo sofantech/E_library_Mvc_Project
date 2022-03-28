@@ -8,6 +8,7 @@ $system=new AppSystem;
 
 Router::get('/users',[UsersController::class,'show']);
 Router::get('/category',[UsersController::class,'register']);
+Router::get('/book',[UsersController::class,'books']);
 
 Router::get('/books',function(){
   echo "books route path";
