@@ -153,7 +153,7 @@
   
   <ul class="menu-inner py-1">
     <!-- Dashboards -->
-    <!-- <li class="menu-item">
+    <li class="menu-item">
       <a href="javascript:void(0);" class="menu-link menu-toggle">
         <i class="menu-icon tf-icons bx bx-home-circle"></i>
         <div data-i18n="Dashboards">Dashboards</div>
@@ -175,10 +175,10 @@
           </a>
         </li>
       </ul>
-    </li> -->
+    </li>
 
     <!-- Layouts -->
-    <!-- <li class="menu-item">
+    <li class="menu-item active">
       <a href="javascript:void(0);" class="menu-link menu-toggle">
         <i class="menu-icon tf-icons bx bx-layout"></i>
         <div data-i18n="Layouts">Layouts</div>
@@ -186,9 +186,9 @@
 
       <ul class="menu-sub">
 
-        <li class="menu-item">
-          <a href="layouts-collapsed-menu.html" class="menu-link">
-            <div data-i18n="Collapsed menu">Collapsed menu</div>
+        <li class="menu-item active">
+          <a href="category" class="menu-link">
+            <div >category</div>
           </a>
         </li>
         <li class="menu-item">
@@ -232,10 +232,10 @@
           </a>
         </li>
       </ul>
-    </li> -->
+    </li>
 
     <!-- Apps & Pages -->
-    <!-- <li class="menu-header small text-uppercase">
+    <li class="menu-header small text-uppercase">
       <span class="menu-header-text">Apps &amp; Pages</span>
     </li>
     <li class="menu-item">
@@ -604,12 +604,12 @@
         <i class="menu-icon tf-icons bx bx-window-open"></i>
         <div data-i18n="Modal Examples">Modal Examples</div>
       </a>
-    </li> -->
+    </li>
 
     <!-- Components -->
-    <!-- <li class="menu-header small text-uppercase"><span class="menu-header-text">Components</span></li> -->
+    <li class="menu-header small text-uppercase"><span class="menu-header-text">Components</span></li>
     <!-- Cards -->
-    <!-- <li class="menu-item">
+    <li class="menu-item">
       <a href="javascript:void(0);" class="menu-link menu-toggle">
         <i class="menu-icon tf-icons bx bx-collection"></i>
         <div data-i18n="Cards">Cards</div>
@@ -646,9 +646,9 @@
           </a>
         </li>
       </ul>
-    </li> -->
+    </li>
     <!-- User interface -->
-    <!-- <li class="menu-item">
+    <li class="menu-item">
       <a href="javascript:void(0)" class="menu-link menu-toggle">
         <i class="menu-icon tf-icons bx bx-box"></i>
         <div data-i18n="User interface">User interface</div>
@@ -750,10 +750,10 @@
           </a>
         </li>
       </ul>
-    </li> -->
+    </li>
 
     <!-- Extended components -->
-    <!-- <li class="menu-item">
+    <li class="menu-item">
       <a href="javascript:void(0)" class="menu-link menu-toggle">
         <i class="menu-icon tf-icons bx bx-copy"></i>
         <div data-i18n="Extended UI">Extended UI</div>
@@ -832,10 +832,10 @@
           </a>
         </li>
       </ul>
-    </li> -->
+    </li>
 
     <!-- Icons -->
-    <!-- <li class="menu-item">
+    <li class="menu-item">
       <a href="javascript:void(0)" class="menu-link menu-toggle">
         <i class="menu-icon tf-icons bx bx-crown"></i>
         <div data-i18n="Icons">Icons</div>
@@ -852,12 +852,12 @@
           </a>
         </li>
       </ul>
-    </li> -->
+    </li>
 
     <!-- Forms & Tables -->
-    <!-- <li class="menu-header small text-uppercase"><span class="menu-header-text">category &amp; op</span></li> -->
+    <li class="menu-header small text-uppercase"><span class="menu-header-text">category</span></li>
     <!-- Forms -->
-    <!-- <li class="menu-item">
+    <li class="menu-item">
       <a href="javascript:void(0);" class="menu-link menu-toggle">
         <i class="menu-icon tf-icons bx bx-detail"></i>
         <div data-i18n="Form Elements">Form Elements</div>
@@ -961,15 +961,15 @@
         <i class="menu-icon tf-icons bx bx-list-check"></i>
         <div data-i18n="Form Validation">Form Validation</div>
       </a>
-    </li> -->
+    </li>
     <!-- Tables -->
-    <!-- <li class="menu-item">
+    <li class="menu-item">
       <a href="tables-basic.html" class="menu-link">
         <i class="menu-icon tf-icons bx bx-table"></i>
         <div data-i18n="Tables">category</div>
       </a>
-    </li> -->
-    <li class="menu-item active open">
+    </li>
+    <li class="menu-item open">
       <a href="javascript:void(0);" class="menu-link menu-toggle">
         <i class="menu-icon tf-icons bx bx-grid"></i>
         <div data-i18n="Datatables">category</div>
@@ -980,7 +980,7 @@
             <div data-i18n="Basic">Basic</div>
           </a>
         </li>
-        <!-- <li class="menu-item">
+        <li class="menu-item">
           <a href="tables-datatables-advanced.html" class="menu-link">
             <div data-i18n="Advanced">Advanced</div>
           </a>
@@ -989,12 +989,12 @@
           <a href="tables-datatables-extensions.html" class="menu-link">
             <div data-i18n="Extensions">Extensions</div>
           </a>
-        </li> -->
+        </li>
       </ul>
     </li>
 
     <!-- Charts & Maps -->
-    <!-- <li class="menu-header small text-uppercase">
+    <li class="menu-header small text-uppercase">
       <span class="menu-header-text">Charts &amp; Maps</span>
     </li>
     <li class="menu-item">
@@ -1020,10 +1020,10 @@
         <i class="menu-icon tf-icons bx bx-map-alt"></i>
         <div data-i18n="Leaflet Maps">Leaflet Maps</div>
       </a>
-    </li> -->
+    </li>
 
     <!-- Misc -->
-    <!-- <li class="menu-header small text-uppercase"><span class="menu-header-text">Misc</span></li>
+    <li class="menu-header small text-uppercase"><span class="menu-header-text">Misc</span></li>
     <li class="menu-item">
       <a href="https://themeselection.com/support/" target="_blank" class="menu-link">
         <i class="menu-icon tf-icons bx bx-support"></i>
@@ -1035,7 +1035,7 @@
         <i class="menu-icon tf-icons bx bx-file"></i>
         <div data-i18n="Documentation">Documentation</div>
       </a>
-    </li> -->
+    </li>
   </ul>
   
   
@@ -1562,7 +1562,7 @@
         <label class="form-label" for="basicPost">Image Url</label>
         <div class="input-group input-group-merge">
           <span id="basicPost2" class="input-group-text"><i class='bx bxs-briefcase'></i></span>
-          <input type="text" id="basicPost" name="basicPost" class="form-control dt-post" placeholder="EX: c/download/c.png" aria-label="Web Developer" aria-describedby="basicPost2" />
+          <input type="file" id="basicPost" name="basicPost" class="form-control dt-post" placeholder="EX: c/download/c.png" aria-label="Web Developer" aria-describedby="basicPost2" />
         </div>
       </div>
       <div class="col-sm-12">
