@@ -10,8 +10,8 @@ class UsersController extends Controller{
 
     }
     public function register(){
-        $users=array("ahmed","ali","hadi");
-        $this->view('newuser',$users);
+       
+        $this->view('admin/category/category');
 
     }
 
