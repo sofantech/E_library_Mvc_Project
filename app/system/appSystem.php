@@ -9,6 +9,7 @@ class AppSystem{
     public SystemResponse $response;
     public Router $router;
     public static AppSystem $appsystem;
+    public DataBase $database;
     
   
     function __construct()

@@ -1,0 +1,360 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  
+}
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #f9fafa, #9294975b);
+  font-family: 'Cairo', sans-serif;
+}
+.container{
+  width: 630px;
+  background: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 50px 35px 10px 35px;
+}
+.container header{
+  font-size: 35px;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+}
+.container .form-outer{
+  width: 100%;
+  overflow: hidden;
+}
+.container .form-outer form{
+  display: flex;
+  width: 300%;
+}
+.form-outer form .page{
+  width: 33.33%;
+  transition: margin-right 0.3s ease-in-out;
+}
+.form-outer form .page .title{
+  text-align: right;
+  font-size: 25px;
+  font-weight: 500;
+}
+.form-outer form .page .field{
+  width: 630px;
+  height: 35px;
+  margin: 35px 0;
+  display: flex;
+  position: relative;
+}
+form .page .field .label{
+  position: absolute;
+  top: -30px;
+  font-weight: 500;
+}
+form .page .field input{
+  height: 100%;
+  width: 100%;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  padding-right: 15px;
+  font-size: 18px;
+}
+form .page .field select{
+  width: 100%;
+  padding-right: 10px;
+  font-size: 17px;
+  font-weight: 500;
+}
+form .page .field button{
+  width: 100%;
+  height: calc(100% + 5px);
+  border: none;
+  background: rgba(37, 84, 146, 0.788);
+  margin-top: -20px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.5s ease;
+}
+form .page .field button:hover{
+  background: rgb(30, 92, 172);
+}
+form .page .btns button{
+  margin-top: -20px!important;
+}
+form .page .btns button.prev{
+  margin-left: 3px;
+  font-size: 17px;
+}
+form .page .btns button.next{
+  margin-right: 3px;
+}
+.container .progress-bar{
+  display: flex;
+  margin: 10px 0;
+  user-select: none;
+}
+.container .progress-bar .step{
+  text-align: center;
+  width: 100%;
+  position: relative;
+}
+.container .progress-bar .step p{
+  font-weight: 500;
+  font-size: 18px;
+  color: #000;
+  margin-bottom: 8px;
+}
+.progress-bar .step .bullet{
+  height: 25px;
+  width: 25px;
+  border: 2px solid #000;
+  display: inline-block;
+  border-radius: 50%;
+  position: relative;
+  transition: 0.2s;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 25px;
+}
+.progress-bar .step .bullet.active{
+  border-color: rgba(37, 84, 146, 0.788);
+  background: rgba(37, 84, 146, 0.788);
+}
+.progress-bar .step .bullet span{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.progress-bar .step .bullet.active span{
+  display: none;
+}
+.progress-bar .step .bullet:before,
+.progress-bar .step .bullet:after{
+  position: absolute;
+  content: '';
+  bottom: 11px;
+  left: -51px;
+  height: 3px;
+  width: 44px;
+  background: #262626;
+}
+.progress-bar .step .bullet.active:after{
+  background: rgba(37, 84, 146, 0.788);
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: animate 0.3s linear forwards;
+}
+@keyframes animate {
+  100%{
+    transform: scaleX(1);
+  }
+}
+.progress-bar .step:last-child .bullet:before,
+.progress-bar .step:last-child .bullet:after{
+  display: none;
+}
+.progress-bar .step p.active{
+  color: rgba(37, 84, 146, 0.788);
+  transition: 0.2s linear;
+}
+.progress-bar .step .check{
+  position: absolute;
+  left: 50%;
+  top: 70%;
+  font-size: 15px;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+.progress-bar .step .check.active{
+  display: block;
+  color: #fff;
+}
+.basket-title
+{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+.basket-container 
+{
+  display: flex;
+  flex-wrap: wrap;
+  max-height: 20rem;
+  overflow: auto;
+  
+  
+}
+.basket-container::-webkit-scrollbar
+{
+  width: 0px;
+  
+  
+}
+.basket-container .box
+{
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: .1rem solid #26262667;
+}
+.basket-container .box .top-card
+{
+  display: flex;
+  gap: 1rem;
+  border-block-end: 1px solid #e0e0e0;
+  padding: 0rem 0 1rem 0;
+  
+}
+.basket-container .box .image
+{
+  max-width: 4rem;
+  
+}
+.basket-container .box .image img
+{
+  width: 100%;
+}
+.basket-container .box .content
+{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.basket-container .box .content h2
+{
+  font-size: 2rem;
+  font-weight: 400;
+  color: #262626;
+  line-height: 1.2;
+}
+.basket-container .box .content p
+{
+  font-size: 1.2rem;
+  color: #5c5b5b;
+}
+.basket-container .box .content .notes
+{
+  background: rgb(245, 245, 160);
+  color: #262626;
+  text-align: right;
+  padding: 0rem 1rem;
+  border-radius: 0.3rem;
+  border-inline-start: 5px solid yellow;
+}
+.basket-container .box .content .notes span.note
+{
+  font-weight: bold;
+}
+.basket-container .box .content .notes span.txt
+{
+  color: rgb(119, 116, 116);
+
+}
+a
+{
+  text-decoration: none;
+}
+.box .count
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.count .counter
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.count .counter input
+{
+  height: 50%;
+  width: 20%;
+  padding: 0.3rem 0;
+}
+.count .control-btn
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.delete-btn
+{
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+.basket-total
+{
+  width: 100%;
+  direction: rtl;
+}
+.free
+{
+  color: green;
+}
+.total-sum,
+.prise-total
+{
+  color: red;
+}
+.basket-total .info-txt
+{
+  border: 0.05rem solid #5c5b5bcc;
+  border-radius: 0.5rem;
+  padding: 1rem 1.5rem;
+}
+.basket-total .info-txt .sum,
+.basket-total .info-txt .shahn,
+.basket-total .info-txt .all-sum
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.basket-total .update-basket
+{
+  width: 100%;
+  padding: 0.5rem;
+  background: red;
+  outline: none;
+  border: none;
+  border-radius: 0.2rem;
+  color: #fff;
+  font-size: 1.4rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+/*############ end checkout section ##############*/
+.checkout
+{
+    padding-bottom: 4rem;
+    
+}
+.checkout .form-outer .page .basket-container
+{
+   
+    margin-bottom: 1rem;
+
+}
+.basket-container .box .content h2
+{
+  font-size: 1.7rem;
+}
+.basket-container .box .content p
+{
+  font-size: 1rem;
+}
+
+/*############ start footer ##############*/

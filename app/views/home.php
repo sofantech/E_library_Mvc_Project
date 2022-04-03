@@ -8,6 +8,14 @@
 </head>
 <body>
     <h1>inside home view</h1>
+    <?php
+
+use coding\app\system\DataBase;
+
+    $data=DataBase::table('users')->select()->all();
+    echo '<pre>';
+    print_r($data);
+    ?>
     
 </body>
 </html>

@@ -1,0 +1,1463 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap');
+/* ########### start global items ###########*/
+:root
+{
+    --icon-color:#2b2b2b;
+    --link-color:#423F3E;
+    --input-bk:#eee;
+    --input-color:#9A9483;
+    --top-bar-bk:#efefef;
+}
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition:all 0.5s linear;
+    font-family: 'Cairo', sans-serif;
+}
+html
+{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 9rem;
+    overflow-x: hidden;
+    direction: rtl;
+}
+body
+{
+    overflow-x: hidden;
+    font-family: 'Cairo', sans-serif;
+}
+.container
+{
+    padding: 0 1.5rem;
+    margin: 0 auto;
+    
+}
+ul
+{
+    list-style: none;
+}
+img
+{
+    max-width: 100%;
+    margin: auto;
+}
+i
+{
+    font-size: 1.4rem;
+    color: var(--icon-color);
+}
+a
+{
+    font-size: 1.4rem;
+    color: var(--link-color);
+    cursor: pointer;
+}
+.btn
+{
+    padding: 0.5rem 1rem;
+    border-radius: .5rem;
+    background: #efefef;
+    color: var(--icon-color);
+    margin: 1rem 0;
+}
+
+/*############ start header ##############*/
+.header
+{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.header .top-header
+{
+    background: var(--top-bar-bk);
+    width: 100%;
+    border-bottom: 0.05rem solid #2424242a;
+    position: relative;
+}
+.header .top-header ul
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header .top-header ul.active
+{
+    transform: translatex(0vw);
+}
+.header .top-header ul li
+{
+    position: relative;
+
+}
+.header .top-header ul li .languages i
+{
+    order: 2;
+
+}
+.header .top-header ul li .languages .language
+{
+    order: 1;
+
+}
+.header .top-header ul li:not(:first-of-type):before
+{
+    content: "";
+    position: absolute;
+    width: 0.1rem;
+    height: 100%;
+    background: #2424242a;
+
+}
+.header .top-header ul li div
+{
+    padding: 1rem;
+}
+.header .top-header .nav-item
+{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 0.5rem;
+}
+.header .main-header
+{
+    width: 100%;
+    padding: 1.5rem;
+
+}
+.header .main-header .main-header-wrapper
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 1rem;
+}
+.header .main-header .togle-menu i
+{
+    font-size: 2.5rem;
+    display: none;
+}
+.header .main-header .logo
+{
+    flex: 0 0 6rem;
+}
+.header .main-header .search-frm
+{
+    flex: 1 1 70%;
+}
+.header .main-header .search-frm input
+{
+    background: var(--input-bk);
+    width: 100%;
+    border-radius: 5rem;
+    padding: 1.5rem;
+}
+.header .main-header .search-frm input::placeholder
+{
+    padding-right: 1rem;
+    color: var(--input-color);
+}
+.header .main-header .basket
+{
+    background: var(--input-bk);
+    width: 4rem;
+    height: 4rem;
+    line-height: 4rem;
+    text-align: center;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+}
+.header .main-header .basket i
+{
+    font-size: 2.2rem;
+    font-weight: bold;
+    
+}
+.header .main-header .basket .conter
+{
+    position: absolute;
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    top: -2px;
+    left: -10px;
+    background: #000;
+    color: #fff;
+    line-height: 2rem;
+    border-radius: 50%;
+
+}
+
+/* start login modale*/
+
+.modal-login,
+.modal-content
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #fff;
+}
+.modal-login
+{
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.6);
+    z-index: 2500;
+    display: none;
+}
+.modal-login.active
+{
+    display: block;
+}
+.modal-content
+{
+    width: 400px;
+    height: 350px;
+    padding: 1.8rem;
+    border-radius: 5px;
+    box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.3);
+}
+.modal-content h2
+{
+    text-align: center;
+    font-size: 2rem;
+    border-bottom: 0.05rem solid #22222229;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+.modal-content form
+{
+    width: 100%;
+}
+.modal-content form .email-input,
+.modal-content form .password-input
+{
+    margin-bottom: 1rem;
+    background: #eee;
+
+}
+.modal-content form .email-input input,
+.modal-content form .password-input input
+{
+    width: 100%;
+    padding: 1.5rem 1.5rem;
+    border-radius: 0.5rem;
+    background: transparent;
+
+}
+.modal-login .modal-content form input[type="submit"]
+{
+    width: 100%;
+    background: rgb(243, 43, 43);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 4rem;
+    font-size: 1.7rem;
+
+
+}
+.modal-content form .sure-msg
+{
+   display: block;
+   text-align: center;
+   margin: 0.5rem 0;
+}
+.modal-content .create-acount
+{
+    text-align: center;
+    padding: 1.5rem 4.5rem;
+    border-radius: 0.5rem;
+    display: block;
+    margin: 1rem auto;
+    background: #fff;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);
+}
+.close-btn
+{
+    position: relative;
+    right: 5%;
+    top: 5%;
+    width: 40px;
+    height: 40px;
+    background: #ccc;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.close-btn i
+{
+    font-size: 2.5rem;
+    color: #2b2b2b;
+
+}
+/* end login modale*/
+
+
+/* start signin modale*/
+
+.modal-signin,
+.modal-content
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #fff;
+}
+.modal-signin
+{
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.6);
+    z-index: 2500;
+    display: none;
+}
+.modal-signin.active
+{
+    display: block;
+}
+.modal-content
+{
+    max-width: 90%;
+    height: 630px;
+    padding: 1.8rem;
+    border-radius: 5px;
+    box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.3);
+}
+.modal-content h2
+{
+    text-align: center;
+    font-size: 2rem;
+    border-bottom: 0.05rem solid #22222229;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+.modal-content form
+{
+    width: 100%;
+}
+.modal-content .number-input
+{
+    display: flex;
+    justify-content: space-between;
+    
+
+
+}
+.modal-content .number-input input
+{
+    width: 70%;
+    background: #eee;
+    padding: 0 .5rem;
+    border-radius: 0.5rem;
+}
+.modal-content .number-input .number
+{
+  
+}
+.modal-content .number-input .country-code
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #eee;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+
+}
+.modal-content form .info-send
+{
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+.modal-content .number-input .country-code select
+{
+    background: transparent;
+}
+.modal-content form .first-name-input,
+.modal-content form .family-name-input,
+.modal-content form .email-input,
+.modal-content form .sure-email-input,
+.modal-content form .password-input
+{
+    margin-bottom:0.5rem ;
+    background: #eee;
+
+}
+.modal-content form .first-name-input input,
+.modal-content form .family-name-input input,
+.modal-content form .email-input input,
+.modal-content form .sure-email-input input,
+.modal-content form .password-input input
+{
+    width: 100%;
+    padding: 1.5rem 1.5rem;
+    border-radius: 0.5rem;
+    background: transparent;
+
+}
+.modal-content form input[type="submit"]
+{
+    width: 100%;
+    background: #eee;
+    color: rgba(34, 34, 34, 0.664);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.7rem;
+
+
+}
+.modal-content form input[type="submit"]:hover
+{
+    background: rgba(37, 84, 146, 0.788);
+    color: #fff;
+    cursor: pointer;
+}
+form .checkbox-sure
+{
+    display: flex;
+    align-items: center;
+}
+.modal-content form .sure-msg
+{
+   display: block;
+   text-align: center;
+   margin: 0.5rem 0;
+}
+.modal-content .create-acount
+{
+    text-align: center;
+    padding: 1.5rem 4.5rem;
+    border-radius: 0.5rem;
+    display: block;
+    margin: 1rem auto;
+    background: #fff;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);
+}
+.close-signin-btn
+{
+    position: relative;
+    right: 5%;
+    top: 5%;
+    width: 40px;
+    height: 40px;
+    background: #ccc;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.close-signin-btn i
+{
+    font-size: 2.5rem;
+    color: #2b2b2b;
+
+}
+/* end signin modale*/
+/*############ end header ##############*/
+
+/*############ start slider ##############*/
+.slider
+{
+    padding: 1rem 0;
+    position: relative;
+    background: linear-gradient(to right,#eee,#ada898),
+                linear-gradient(35deg,#eee,#effefe),
+                linear-gradient(90deg,#9A9483,#effefe);
+}
+.slider .form-ouer
+{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.arrow-right
+{
+    position: absolute;
+    right: 0%;
+    top: 50%;
+    transform: translate(-0%,-50%);
+    cursor: pointer;
+
+}
+.arrow-left
+{
+    position: absolute;
+    left: 0%;
+    top: 50%;
+    transform: translate(0%,-50%);
+    cursor: pointer;
+    
+}
+.arrow-right i,.arrow-left i
+{
+    font-size: 4rem;
+    color: #423F3E;
+
+}
+.slider ul
+{
+    width: 400%;
+    display: flex;
+    column-gap: 2rem;
+    animation: slidin 10s ease-in-out infinite;
+}
+.slider ul:hover
+{
+    animation-play-state: paused;
+
+}
+.slider ul li
+{
+    width: 100%;
+}
+.slider ul li .content
+{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.slider ul li .content img
+{
+
+}
+.slider ul li .content .txt-ifon
+{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+.slider ul li .content .txt-ifon h2
+{
+    font-size: 4rem;
+    font-weight: 800;
+    color: rgba(11, 11, 112, 0.801);
+}
+.slider ul li .content .txt-ifon a
+{
+    color: rgb(233, 20, 20);
+    background: rgba(230, 230, 14, 0.979);
+    font-size: 1.6rem;
+    font-weight: 900;
+    padding: 1rem 2rem;
+}
+.slider ul li .content .txt-ifon span
+{
+    font-size: 1.7rem;
+
+}
+.slider h5
+{
+    background: #2b2b2b;
+    text-align: center;
+    font-size: 1.4rem;
+    color: #eee;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin: 0;
+}
+@keyframes slidin
+{
+    5%,10%
+    {
+        right: -100%;
+    }
+    15%,30%
+    {
+        margin-right: -100%;
+    }
+    35%,50%
+    {
+        margin-right: -200%;
+    }
+    55%,70%
+    {
+        margin-right: -300%;
+    }
+    75%,90%
+    {
+        margin-right: -400%;
+    }
+}
+
+/*############ end slider ##############*/
+
+
+/*############ start category section ##############*/
+.category
+{
+    padding: 2rem 0;
+
+}
+.category .category-cont
+{
+    display: flex;
+    column-gap: 5%;
+
+}
+.category .filter
+{
+    flex-basis: 30%;
+
+}
+.category .filter ul
+{
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+} 
+.category .filter ul li a
+{
+    color: rgb(80, 80, 235);
+}
+.category .category-cont .content
+{
+    flex: 0 0 60%;
+}
+.filter .filter-cho
+{
+    display: flex;
+    align-items: center;
+    column-gap: 1.5rem;
+    color: green;
+    border: 0.2rem solid green;
+    font-size: 1.6rem;
+    font-weight: 600;
+    background: #fff;
+}
+.filter .filter-cho i
+{
+    color: green;
+}
+.filter .filter-box
+{
+    overflow: hidden;
+    border: .005rem solid hsla(240, 57%, 31%, 0.5);
+    border-radius: .5rem;
+    
+
+}
+.filter-box span,
+.filter-box i,
+.filter-box label
+{
+    font-size: 1.7rem;
+}
+.filter .filter-box .filter-box-header
+{
+    background: green;
+    padding: 1rem;
+    color: #fff;
+    font-size: 2rem;
+}
+.filter .filter-box .parent-tab
+{
+    
+}
+.filter .filter-box .parent-tab label
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: rgba(153, 183, 238, 0.507);
+    color: #2b2b2b;
+    border-bottom: 0.005rem solid rgba(101, 121, 160, 0.288);
+}
+.filter .filter-box .parent-tab .content
+{
+    display: none;
+    padding: 1rem;
+}
+.price-content
+{
+    padding: 3rem 1rem 1rem 1rem;
+
+}
+.price-content.hidden
+{
+    display: none;
+}
+.price-content .prise-range
+{
+    padding: 0 2rem;
+
+}
+.price-content .prise-range span
+{
+    display: inline-block;
+    height: 1.2rem;
+    width: 100%;
+    background:#9A9483;
+    position: relative;
+
+}
+.price-content .prise-range span::before
+{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    background: red;
+    width: 2rem;
+    height: 2rem;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+
+}
+.price-content .prise-range span::after
+{
+    content: "";
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    background: red;
+    width: 2rem;
+    height: 2rem;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+
+}
+.price-content .prise-values
+{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+}
+.price-content .prise-values span
+{
+    font-size: 1.7rem;
+    color: rgb(116, 104, 104);
+
+}
+.order-product
+{
+    flex: 1;
+
+}
+.order-product .show-more
+{
+    width: 100%;
+    padding: 1rem;
+    color: #fff;
+    background: rgba(37, 84, 146, 0.788);
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+    cursor: pointer;
+}
+.order-product .show-more:hover
+{
+    background: rgb(30, 92, 172);
+}
+.order-product .order-criteria
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+
+}
+.order-product .box-wrapper
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(13rem,1fr));
+    gap: 1.5rem;
+
+}
+.order-product .box-wrapper .box
+{
+    border: 0.1rem solid rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    border-radius: 0.5rem;
+    position: relative;
+
+}
+.order-product .box-wrapper .box .image
+{
+    height: 130px;
+    position: relative;
+}
+.order-product .box-wrapper .box .timer 
+{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background: rgb(116, 104, 104);
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.order-product .box-wrapper .box .image img
+{
+    width: 100%;
+    height: 100%;
+}
+.order-product .box-wrapper .box .book-name
+{
+    display: flex;
+    flex-direction: row-reverse;
+    column-gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+}
+.order-product .box-wrapper .box .book-info
+{
+    text-align: center;
+}
+.order-product .box-wrapper .box .book-price
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.order-product .box-wrapper .box .other-ref
+{
+    text-align: center;
+    margin: 0.5rem 0;
+}
+.order-product .box-wrapper .box .bottom-box
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+
+}
+.order-product .box-wrapper .box .bottom-box i
+{
+    font-size: 2rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+.order-product .box-wrapper .box .bottom-box .shopping-basket
+{
+    width: 4rem;
+    height: 4rem;
+    line-height: 4rem;
+    border-radius: 50%;
+    text-align: center;
+    background: rgb(230, 21, 21);
+    cursor: pointer;
+}
+.order-product .box-wrapper .box .bottom-box .shopping-basket i
+{
+    color: #fff;
+    font-size: 2.2rem;
+}
+.footer-category
+{
+    background-color: #fff;
+    border-radius: 0 0 5px 5px;
+    padding: 15px;
+    margin: 10px -10px 0;
+    border-top: 10px solid #f1f1f1;
+}
+.footer-category h1
+{
+    color: green;
+    font-size: 1.7rem;
+}
+/*############ end category section ##############*/
+
+
+/*############ start order by category section ##############*/
+.order-by-category
+{
+    width: 100%;
+    position: relative;
+}
+.order-by-category .arrow-right
+{
+    position: absolute;
+    right: 0%;
+    top: 50%;
+    transform: translate(0%,-50%);
+    cursor: pointer;
+
+}
+.order-by-category .arrow-left
+{
+    position: absolute;
+    left: 0%;
+    top: 50%;
+    transform: translate(0%,-50%);
+    cursor: pointer;
+    
+}
+.order-by-category .form-outer
+{
+    width: 100%;
+    overflow: hidden;
+    
+}
+.order-by-category ul
+{
+    width: 200%;
+    display: flex;
+}
+.order-by-category ul li
+{
+    width: 25%;
+    margin: 2rem 0.5rem;
+    background: #eee;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+.cat-logo
+{
+    width: 4rem;
+    height: 4rem;
+    line-height: 4rem;
+    background: red;
+    color: white;
+    text-align: center;
+    border-radius: 50%;
+}
+.order-by-category li h3
+{
+    font-size: 2rem;
+    padding: 1rem 0;
+    color: red;
+}
+li:nth-child(2) .cat-logo
+{
+    background: rgb(226, 130, 5);
+
+}
+li:nth-child(2) h3
+{
+    color: rgb(226, 130, 5);
+    font-size: 2rem;
+}
+li:nth-child(3) .cat-logo
+{
+    background: rgb(79, 101, 223);
+
+}
+li:nth-child(3) h3
+{
+    color: rgb(79, 101, 223);
+    font-size: 2rem;
+}
+li:nth-child(4) .cat-logo
+{
+    background: rgba(241, 146, 67, 0.829);
+
+}
+li:nth-child(4) h3
+{
+    color: rgba(241, 146, 67, 0.829);
+    font-size: 2rem;
+}
+li:nth-child(5) .cat-logo
+{
+    background: rgba(110, 36, 7, 0.829);
+
+}
+li:nth-child(5) h3
+{
+    color: rgba(110, 36, 7, 0.829);
+    font-size: 2rem;
+}
+li:nth-child(6) .cat-logo
+{
+    background: rgba(201, 46, 92, 0.918);
+
+}
+li:nth-child(6) h3
+{
+    color: rgba(201, 46, 92, 0.918);
+    font-size: 2rem;
+}
+.cat-logo i
+{
+    color: #fff;
+    font-size: 1.7rem;
+}
+/*############ end order by category section ##############*/
+
+
+/*############ start details section ##############*/
+.detail
+{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+}
+.detail .top-bar
+{
+
+}
+.detail .top-bar ul
+{
+    display: flex;
+    align-items: center;
+    column-gap: 2rem;
+}
+.detail .top-bar ul a
+{
+    color: blue;
+}
+.detail .top-bar ul span
+{
+    color: #423F3E;
+}
+.detail .book-info
+{
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+
+}
+.book-info .book-image-box
+{
+    max-width: 400px;
+    background: #eee;
+    border: 1px solid #000;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1rem 2rem;
+    flex-basis: calc(100% / 3);
+}
+.book-image-box .bg-image
+{
+    width: 60%;
+}
+.book-image-box .bg-image img
+{
+    width: 100%;
+}
+.book-image-box .sm-image
+{
+    width: 15%;
+    padding: 1rem 1rem;
+    border: 2px solid blue;
+    border-radius: 5px;
+}
+.book-image-box .sm-image img
+{
+    width: 100%;
+}
+.detail .book-detail-box
+{
+    flex-basis: calc(100% / 3);
+
+}
+.detail .book-detail-box h2
+{
+    font-size: 2.2rem;
+}
+.detail .book-detail-box .show-more
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+}
+.detail .book-detail-box .show-more a,
+.detail .book-detail-box .show-more i
+{
+    font-size: 1.7rem;
+    color: blue;
+
+}
+.detail .prise-box
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.detail .prise-box .prise
+{
+    color: red;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+.detail .prise-box .tax
+{
+    font-size: 1.2rem;
+    color: #423f3e7a;
+    width: 100%;
+    line-height: 1;
+}
+.detail .rate
+{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.detail .rate .star
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 0.5rem;
+}
+.detail .rate .star i
+{
+    color: #d8d81df7;
+    font-size: 1.7rem;
+    font-weight: bolder;
+}
+.detail .rate .product-info
+{
+    display: flex;
+    justify-content: space-between;
+    column-gap: 0.5rem;
+    flex-direction: row-reverse;
+}
+.detail .available-format
+{
+
+}
+.detail .available-format h5
+{
+    font-size: 1.7rem;
+    color: var(--link-color);
+}
+.detail .available-format .electro-book,
+.detail .available-format .print-book
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+}
+.add-to-basket-box
+{
+    flex-basis: calc(100% / 3);
+    padding: 1rem 1.5rem;
+    background: #eee;
+}
+.add-to-basket-box .note
+{
+    background: rgb(245, 245, 160);
+    color: #262626;
+    text-align: right;
+    padding: 1rem;
+    border-radius: 0.3rem;
+    font-size: 1.6rem;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    border-inline-start: 5px solid rgb(158, 158, 8);
+    margin-bottom: 1rem;
+}
+.add-to-basket-box .note .not
+{
+    font-size: 1.7rem;
+    font-weight: bold;
+}
+.add-to-basket-box .note .read-more
+{
+    color: blue;
+}
+.detail .basket-btn
+{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+}
+.detail .basket-btn button
+{
+    flex-basis: 80%;
+    background: red;
+    color: #fff;
+    border-radius: 0.5rem;
+    padding: 1rem;
+
+}
+.detail .basket-btn select
+{
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+.detail .more-info 
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 2rem;
+    background: #fff;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+}
+.detail .more-info .one,
+.detail .more-info .two,
+.detail .more-info .three
+{
+    display: flex;
+    align-items: center;
+    flex-basis: 50%;
+}
+.book-description
+{
+    background: #eee;
+    padding: 2rem;
+    border: 0.05rem solid #9e9e9e;
+}
+.specification-box
+{
+    margin: 3rem 0;
+    border-bottom: 0.1rem solid #9e9e9e;
+    padding: 1rem 0;
+    border-radius: 1rem;
+}
+.specification-header
+{
+    font-size: 1.7rem;
+}
+.specification-box div
+{
+    padding: 1rem;
+    border-bottom: 0.05rem solid #9e9e9e;
+    display: flex;
+    gap: 10rem;
+}
+.customer-btn
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(15, 15, 207, 0.842);
+    color: #fff;
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    column-gap: 1rem;
+    cursor: pointer;
+}
+.customer-btn i
+{
+    color: #fff;
+}
+.customer-reviews-header
+{
+    display: flex;
+    justify-content: flex-start;
+    column-gap: 2rem;
+    align-items: center;
+    margin-bottom: 2rem;
+    font-size: 1.7rem;
+}
+
+
+
+
+/*############ end details section ##############*/
+
+/*############ start checkout section ##############*/
+
+
+.footer
+{
+    background: rgb(238, 230, 201);
+    
+    
+}
+.footer .footer-links
+{
+    background: var(--icon-color);
+    padding: 2rem 0;
+
+}
+.footer h3
+{
+    color: var(--input-color);
+    border-bottom: 0.1rem solid var(--link-color);
+    font-size: 1.7rem;
+    font-weight: 500;
+}
+.footer .footer-boxs
+{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+}
+
+.footer .frm-container
+{
+    background: #3f3f3f;
+    width: 100%;
+    padding: 2rem;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+}
+.footer .frm-container form
+{
+    display: flex;
+    flex-direction: column;
+    align-items: self-end;
+}
+.footer form .input-email
+{
+    background: white;
+    padding: .5rem 1.5rem;
+    border-radius: 0.5rem;
+}
+.footer .footer-boxs .box
+{
+    display: flex;
+    flex-direction: column;
+}
+.footer .footer-boxs .box a
+{
+    color: #ada898;
+    font-size: 1.2rem;
+}
+.bottom-footer
+{
+    padding: 2.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer .bottom-footer span
+{
+    font-size: 1.5rem;
+
+}
+.footer .visa-section
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 1.5rem;
+}
+
+/*############ end footer ##############*/
+
+
+/* ######### media query ###################*/
+@media(max-width:768px)
+{
+    html
+    {
+        font-size: 50%;
+    }
+    .header .top-header ul
+    {
+        height: 100vh;
+        width: 70vw;
+        position: absolute;
+        top: 79px;
+        right: 0;
+        border-radius: 0.5rem;
+        display: flex;
+        justify-content: right;
+        align-items: inherit;
+        flex-direction: column;
+        padding: 2.5rem;
+        z-index: 2000;
+        background: #eee;
+        transform: translatex(70vw);
+    }
+    .header .main-header .togle-menu i
+    {
+        display: inline-block;
+    }
+    .footer .footer-boxs
+    {
+        flex-direction: column;
+    }
+    .footer .footer-boxs .box a
+    {
+        display: none;
+    }
+    .footer .footer-boxs .social-media a
+    {
+        display: inline-block;
+    }
+    .category .category-cont
+    {
+        flex-direction: column;
+    }
+    .detail .book-info
+    {
+        flex-direction: column;
+    }
+}
+@media(max-width:992px)
+{
+    
+    html
+    {
+        font-size: 50%;
+    }
+}
+@media(min-width:576px)
+{
+    .container
+    {
+        width: 576px;
+    }
+}
+@media(min-width:768px)
+{
+    
+    .container
+    {
+        width: 720px;
+       
+    }
+    
+    
+}
+
+@media(min-width:992px)
+{
+    
+    .container
+    {
+        width: 960px;
+    }
+}
+@media(min-width:1200px)
+{
+    .container
+    {
+        width: 1140px;
+    }
+}
+@media(min-width:1400px)
+{
+    .container
+    {
+        width: 1320px;
+    }
+}
